@@ -12,6 +12,8 @@ object pepita {
 
 	method come(comida) {
 		energia = energia + comida.energia()
+		
+		// TODO Precalcular la energia es una mala idea y te va a traer problemas. Evitalo.
 		if(energia >100){
 			imagen = "pepita2.png"	
 		}
@@ -40,6 +42,7 @@ object pepita {
 	method move(nuevaPosicion) {
 		
 			energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
+			// TODO Acá estás repitiendo parte del código necesario para recalcular
 			if(energia < 10){
 				imagen = "pepita.png"
 			}else if(energia.between(10,100)){
